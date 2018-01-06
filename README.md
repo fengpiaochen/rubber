@@ -1,2 +1,2 @@
 # rubber
-rubber product project
+initalize develop
