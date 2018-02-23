@@ -73,7 +73,7 @@
 	</bean>
 	
 	<bean id="mysql" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.rubber.material.mapper" />
+		<property name="basePackage" value="com.rubber.material.dao" />
 		<property name="sqlSessionFactoryBeanName" value="sqlMapClient" />
 	</bean>
 	

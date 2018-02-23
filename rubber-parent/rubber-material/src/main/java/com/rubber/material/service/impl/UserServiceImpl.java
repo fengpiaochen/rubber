@@ -5,13 +5,11 @@
 package com.rubber.material.service.impl;
 
 import javax.annotation.PostConstruct;
-import javax.annotation.Resource;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.rubber.common.service.impl.BaseServiceImpl;
-import com.rubber.material.mapper.UserMapper;
+import com.rubber.material.dao.UserMapper;
 import com.rubber.material.model.User;
 import com.rubber.material.service.UserService;
 

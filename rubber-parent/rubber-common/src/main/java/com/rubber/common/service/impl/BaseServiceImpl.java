@@ -105,6 +105,7 @@ public abstract class BaseServiceImpl<T extends BaseModel> implements BaseServic
         BaseExample example = pageData.getExample();
         example.setStart(pageData.getFirst());
         example.setEnd(pageData.getEnd());
+        example.setNumPerPage(pageData.getNumPerPage()); 
         if (StringUtils.isNotBlank(pageData.getOrderField())) {
             example.setOrderByClause(pageData.getOrderByClause());
         }

@@ -4,13 +4,12 @@
  */
 package com.rubber.material.service.impl;
 import javax.annotation.PostConstruct;
-import javax.annotation.Resource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.rubber.common.service.impl.BaseServiceImpl;
-import com.rubber.material.mapper.DetectionMapper;
+import com.rubber.material.dao.DetectionMapper;
 import com.rubber.material.model.Detection;
 import com.rubber.material.service.DetectionService;
 

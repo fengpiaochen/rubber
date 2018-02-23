@@ -2,7 +2,7 @@
  * Eya.com Inc.
  * Copyright (c) 2004-2014 All Rights Reserved.
  */
-package com.rubber.material.mapper; 
+package com.rubber.material.dao; 
 import com.rubber.common.mapper.BaseMapper;
 import com.rubber.material.model.Detection;
 

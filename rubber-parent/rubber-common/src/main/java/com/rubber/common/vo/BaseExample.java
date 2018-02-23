@@ -29,6 +29,9 @@ public class BaseExample {
 
     /**分页查询的结束索引*/
     protected int            end;
+    
+    /**分页查询的页大小*/
+    protected int numPerPage;
 
     /**
      * Getter method for property <tt>start</tt>.
@@ -65,8 +68,16 @@ public class BaseExample {
     public void setEnd(int end) {
         this.end = end;
     }
+    
+    public int getNumPerPage() {
+		return numPerPage;
+	}
 
-    /**
+	public void setNumPerPage(int numPerPage) {
+		this.numPerPage = numPerPage;
+	}
+
+	/**
      * 构造方法，实例化oredCriteria
      */
     public BaseExample() {
