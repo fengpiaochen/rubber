@@ -62,7 +62,7 @@
 			
 		<!-- 统计数据的共计的行数 -->
 		<select id="selectPagingCount" parameterType="com.rubber.common.vo.BaseExample" resultType="java.lang.Integer">
-			select count(1)   from material   where 1 = 1 
+			select count(1)   from material where 1 = 1 
 			<if test="_parameter!= null">
 				<include refid="Example_Where_Clause" />
 			</if>

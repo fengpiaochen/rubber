@@ -50,18 +50,17 @@
 	
 			select <if test="distinct">distinct</if>
 			<include refid='Base_Column_List' />
-				from (select rownum r,tp.* from (select * from  user  where
+				from  user  where 1 = 1 
 			<if test="_parameter!= null">
 				<include refid="Example_Where_Clause" />
 			</if> 
-			<if test="orderByClause != null">order by  ${orderByClause}</if>) tp where  
-			<![CDATA[ rownum <= #{end}]]>      )  t    
-			where  t.r >#{start}
+			<if test="orderByClause != null">order by  ${orderByClause}</if> 
+			limit #{start}, #{numPerPage}
 		</select>
 			
 		<!-- 统计数据的共计的行数 -->
 		<select id="selectPagingCount" parameterType="com.rubber.common.vo.BaseExample" resultType="java.lang.Integer">
-			select count(1)   from user   where
+			select count(1)   from user where 1 = 1 
 			<if test="_parameter!= null">
 				<include refid="Example_Where_Clause" />
 			</if>
@@ -71,7 +70,7 @@
 		<insert id="insert" parameterType="com.rubber.material.model.User">
 			insert into user
 			<selectKey keyProperty="id" order="BEFORE" resultType="String">
-				select SYS_GUID() as  id  from dual
+				select  replace(uuid(),'-','')   from dual
 			</selectKey>
 			<trim prefix="(" suffix=")" suffixOverrides=",">
 				<if test="id != null">

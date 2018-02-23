@@ -32,7 +32,7 @@ public class Detection extends BaseModel implements java.io.Serializable{
 	private Integer            useState;
 	
 	/**送检日期*/
-	private Date            detectdate;
+	private Date            detectDate;
 	
 	/**备注*/
 	private String            remark;
@@ -140,8 +140,8 @@ public class Detection extends BaseModel implements java.io.Serializable{
      * 
      * @param detectdate value to be assigned to property detectdate
      */
-	public void setDetectdate(Date detectdate) {
-		this.detectdate = detectdate;
+	public void setDetectDate(Date detectDate) {
+		this.detectDate = detectDate;
 	}
 	
 	 /**
@@ -149,8 +149,8 @@ public class Detection extends BaseModel implements java.io.Serializable{
      * 
      * @return detectdate value of detectdate
      */
-	public Date getDetectdate() {
-		return this.detectdate;
+	public Date getDetectDate() {
+		return this.detectDate;
 	}
 	
 	 /**

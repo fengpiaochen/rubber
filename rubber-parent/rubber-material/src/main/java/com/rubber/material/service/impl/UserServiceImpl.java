@@ -19,7 +19,7 @@ import com.rubber.material.service.UserService;
  * @author  自动生成
  * @version $Id: userServiceImpl.java, v 0.1  2018-2-22 13:31:26  自动生成 Exp $
  */
-@Service
+@Service("userService")
 public class UserServiceImpl extends BaseServiceImpl<User> implements UserService {
 
     /**用户表数据层访问接口实现**/
