@@ -19,7 +19,7 @@ import com.rubber.material.service.DetectionService;
  * @author  自动生成
  * @version $Id: detectionServiceImpl.java, v 0.1  2018-2-22 13:31:26  自动生成 Exp $
  */
-@Service
+@Service("detectionService")
 public class DetectionServiceImpl extends BaseServiceImpl<Detection> implements DetectionService {
 
     /**检测表数据层访问接口实现**/

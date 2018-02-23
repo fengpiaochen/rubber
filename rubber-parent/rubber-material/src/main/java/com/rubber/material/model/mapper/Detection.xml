@@ -9,7 +9,7 @@
 		<id column="amount" property="amount"   />
 		<id column="detect_state" property="detectState"   />
 		<id column="use_state" property="useState"   />
-		<id column="detect_date" property="detectdate"   />
+		<id column="detect_date" property="detectDate"   />
 		<id column="remark" property="remark"   />
 		<id column="creator_id" property="creatorId"   />
 		<id column="create_time" property="createTime"   />
@@ -54,18 +54,17 @@
 	
 			select <if test="distinct">distinct</if>
 			<include refid='Base_Column_List' />
-				from (select rownum r,tp.* from (select * from  detection  where
+				from  detection  where 1 = 1
 			<if test="_parameter!= null">
 				<include refid="Example_Where_Clause" />
 			</if> 
-			<if test="orderByClause != null">order by  ${orderByClause}</if>) tp where  
-			<![CDATA[ rownum <= #{end}]]>      )  t    
-			where  t.r >#{start}
+			<if test="orderByClause != null">order by  ${orderByClause}</if> 
+			limit #{start}, #{numPerPage}
 		</select>
 			
 		<!-- 统计数据的共计的行数 -->
 		<select id="selectPagingCount" parameterType="com.rubber.common.vo.BaseExample" resultType="java.lang.Integer">
-			select count(1)   from detection   where
+			select count(1)   from detection where 1 = 1 
 			<if test="_parameter!= null">
 				<include refid="Example_Where_Clause" />
 			</if>
@@ -75,7 +74,7 @@
 		<insert id="insert" parameterType="com.rubber.material.model.Detection">
 			insert into detection
 			<selectKey keyProperty="id" order="BEFORE" resultType="String">
-				select SYS_GUID() as  id  from dual
+				select  replace(uuid(),'-','')   from dual
 			</selectKey>
 			<trim prefix="(" suffix=")" suffixOverrides=",">
 				<if test="id != null">
@@ -93,7 +92,7 @@
 				<if test="useState != null">
 					use_state,
 				</if>
-				<if test="detectdate != null">
+				<if test="detectDate != null">
 					detect_date,
 				</if>
 				<if test="remark != null">
@@ -123,8 +122,8 @@
 				<if test="useState != null">
 					#{useState },
 				</if>
-				<if test="detectdate != null">
-					#{detectdate },
+				<if test="detectDate != null">
+					#{detectDate },
 				</if>
 				<if test="remark != null">
 					#{remark },
@@ -188,8 +187,8 @@
 				<if test="useState != null">
 					use_state = #{useState},
 				</if>
-				<if test="detectdate != null">
-					detect_date = #{detectdate},
+				<if test="detectDate != null">
+					detect_date = #{detectDate},
 				</if>
 				<if test="remark != null">
 					remark = #{remark},
