@@ -9,7 +9,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.alibaba.fastjson.JSONObject;
 import com.rubber.common.vo.PageData;
 import com.rubber.material.model.Detection;
-import com.rubber.material.model.Material;
 import com.rubber.material.service.DetectionService;
 import com.rubber.material.service.impl.DetectionServiceImpl;
 
