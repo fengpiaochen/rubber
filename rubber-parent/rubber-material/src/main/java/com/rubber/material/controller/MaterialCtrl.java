@@ -4,13 +4,17 @@
  */
 package com.rubber.material.controller;
 
-import javax.annotation.Resource;
+import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.alibaba.fastjson.JSONObject;
 import com.rubber.common.vo.PageData;
 import com.rubber.material.model.Material;
 import com.rubber.material.service.MaterialService;
@@ -30,9 +34,14 @@ public class MaterialCtrl {
 	
 	
 	@RequestMapping("/list")
-	public String list(PageData<Material> pageData,Model model){ 
+	@ResponseBody
+	public String list(PageData<Material> pageData,Model model, HttpServletResponse response){ 
+		response.setCharacterEncoding("utf-8");
 		materialService.selectByPaging(pageData);
-		return "material/list";
+		List<Material> list = pageData.getResult();
+		String str = JSONObject.toJSONString(list);
+		System.out.println(str);
+		return str;
 	}
 	
 	@RequestMapping("/add")
